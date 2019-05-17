@@ -1,11 +1,12 @@
 const path = require('path');
 
 const CONFIG = {
+    // target: 'node',
     entry: {
-        app: './patterns/index.js'
+        app: './src/index.js'
     },
     output: {
-        filename: './dist/[name].js'
+        filename: './[name].js'
     },
     module: {
         rules: [
@@ -34,12 +35,6 @@ const CONFIG = {
         alias: {
             patts: path.join(__dirname, '/src/index')
         }
-    },
-    devServer: {
-        contentBase: path.join(__dirname, '/public'),
-        hot: true,
-        inline: true,
-        historyApiFallback: true
     }
 }
 

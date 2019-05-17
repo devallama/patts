@@ -4,17 +4,17 @@ import styled from 'styled-components';
 
 import MenuList from './List';
 
-const ListItem = styled.li`
+const Item = styled.li`
     user-select: none;
     cursor: pointer;
 `;
 
-class Item extends React.Component {
+class ListItem extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            isOpen: props.isOpen || false
+            isOpen: props.isOpen || true
         };
     }
 
@@ -30,21 +30,21 @@ class Item extends React.Component {
         let children = this.props.children;
 
         if (this.props.collapsible && !this.state.isOpen) {
-            children = this.props.children.map(child => {
+            children = this.props.children.map((child, index) => {
                 if (!React.isValidElement(child)) return child;
 
                 return child.type == MenuList
-                    ? React.cloneElement(child, { children: null })
-                    : React.cloneElement(child)
+                    ? React.cloneElement(child, { children: null, key: index })
+                    : React.cloneElement(child, { key: index })
             });
         }
 
         return (
-            <ListItem onClick={this.toggle}>
+            <Item onClick={this.toggle}>
                 {children}
-            </ListItem>
+            </Item>
         );
     }
 }
 
-export default Item;
+export default ListItem;

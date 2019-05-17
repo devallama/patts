@@ -1,10 +1,15 @@
 import React from 'react';
-import Frame from 'react-frame-component';
+import Frame, { FrameContextConsumer } from 'react-frame-component';
 
-import styled from 'styled-components';
+import styled, { StyleSheetManager } from 'styled-components';
 
 const StyledFrame = styled(Frame)`
     border: none;
+    display: block;
+    width: 100%;
+    height: 80vh;
+    padding: 2rem 2rem;
+    box-sizing: border-box;
 `;
 
 class Canvas extends React.Component {
@@ -23,13 +28,21 @@ class Canvas extends React.Component {
         }
 
         if (typeof globalHugFn == 'function') {
-            wrapperGlobalHugFn = globalHugFn(baseComponent);
+            wrapperGlobalHugFn = patt => globalHugFn(patt);
         }
 
         return (
             <div>
                 <StyledFrame>
-                    {wrapperGlobalHugFn(() => wrapperHugFn(() => <Component />))}
+                    <FrameContextConsumer>
+                        {frameContext => (
+                            <StyleSheetManager target={frameContext.document.head}>
+                                <React.Fragment>
+                                    {wrapperGlobalHugFn(() => wrapperHugFn(() => <Component />))}
+                                </React.Fragment>
+                            </StyleSheetManager>
+                        )}
+                    </FrameContextConsumer>
                 </StyledFrame>
             </div>
         );

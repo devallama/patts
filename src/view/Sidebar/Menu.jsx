@@ -37,13 +37,15 @@ class Menu extends React.Component {
                     }
                 })];
             } else {
-                nav.folders[path[index]] = {
-                    files: [],
-                    folders: {}
-                };
+                if (items.length > 0) {
+                    nav.folders[path[index]] = {
+                        files: [],
+                        folders: {}
+                    };
 
-                let inc = index + 1;
-                nav.folders[path[index]] = addPathToNav(nav.folders[path[index]], path, items, inc);
+                    let inc = index + 1;
+                    nav.folders[path[index]] = addPathToNav(nav.folders[path[index]], path, items, inc);
+                }
             }
 
             return nav;

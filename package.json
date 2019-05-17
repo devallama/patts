@@ -4,7 +4,8 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "serve-patts": "webpack-dev-server --watch"
+        "serve-patts": "webpack-dev-server --watch",
+        "build": "webpack --config webpack.build.config.js"
     },
     "author": "",
     "license": "ISC",

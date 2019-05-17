@@ -9,8 +9,11 @@ import Menu from './Menu';
 const Wrapper = styled.div`
     height: 100%;
     width: 15%;
-    min-width: 15rem;
+    min-width: 18rem;
     background-color: #f4f7fc;
+    position: sticky;
+    display: block;
+    overflow: auto;
 `;
 
 const Logo = styled.figure`

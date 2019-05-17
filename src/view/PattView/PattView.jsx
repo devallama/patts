@@ -8,6 +8,14 @@ import styled from 'styled-components';
 import Canvas from '../Canvas/Canvas';
 import Doc from '../Doc/Doc';
 
+const Wrapper = styled.div`
+    width: 100%;
+`;
+
+const WrapperInner = styled.div`
+    padding: 2rem;
+`;
+
 class PattView extends React.Component {
     constructor(props) {
         super(props);
@@ -30,29 +38,31 @@ class PattView extends React.Component {
     render() {
         if (this.props.currentComponent) {
             return (
-                <div>
+                <Wrapper>
                     <Canvas
                         currentPatt={this.props.currentPatt}
                         currentComponent={this.props.currentComponent}
                         globalHugFn={this.props.globalHugFn}
                     />
-                </div>
+                </Wrapper>
             );
         } else if (this.props.currentDoc) {
             return (
-                <div>
+                <Wrapper>
                     <Doc
                         currentPatt={this.props.currentPatt}
                         currentDoc={this.props.currentDoc}
                     />
-                </div>
+                </Wrapper>
             );
         } else {
             return (
-                <div>
-                    <Link to="/">Home</Link>
-                    <h1>Component doesn't exist.</h1>
-                </div>
+                <Wrapper>
+                    <WrapperInner>
+                        <h1>Welcome to Patts Library</h1>
+                        <p>Click a component or doc on the left</p>
+                    </WrapperInner>
+                </Wrapper>
             );
         }
 

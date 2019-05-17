@@ -25,10 +25,6 @@ class PattRender extends React.Component {
     }
 }
 
-// PattRender.propTypes = {
-//     patts: PropTypes.array.isRequired
-// };
-
 const mapStateToProps = state => {
     return ({
         patts: state.patt.patts
