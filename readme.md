@@ -85,3 +85,8 @@ export default pattsFor('Header')
 ### .hug()
 
 ​	param 1: Wrapper function for all patts within the component
+
+# Live demo
+
+<https://patts-90515.firebaseapp.com/Usage/get-started>
+

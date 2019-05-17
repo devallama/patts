@@ -1,9 +1,10 @@
 const path = require('path');
 
 const CONFIG = {
-    // target: 'node',
+    target: 'web',
+    mode: 'production',
     entry: {
-        app: './src/index.js'
+        app: './patterns/index.js'
     },
     output: {
         filename: './[name].js'
