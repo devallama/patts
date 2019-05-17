@@ -81,7 +81,6 @@ class Menu extends React.Component {
             if (folder.files.length > 0) {
                 fileItems = folder.files.map((item, index) =>
                     <ListItem key={index}>
-                        {console.log(item)}
                         <NavLink to={`${folderPath}/${item.slug}`}>{item.name}</NavLink>
                     </ListItem>
                 );

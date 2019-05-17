@@ -5,9 +5,6 @@ import { pattsFor } from '../../src/index';
 import notes from './notes.md';
 import Header from './Header';
 
-console.log("errrr");
-console.log(<Header />);
-
 export default pattsFor('Header')
     .hug((patt) => <div>Container for component {patt()}</div>)
     .add('Test component default', () => (
