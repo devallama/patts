@@ -6,7 +6,7 @@
 
 ## Who's Patt?
 
-Patts Library (Patts as in Patterns, or good boy pats) is a React styled component pattern library. It has taken inspiration from Storybook, however works fairly differently using different technologies and not as feature rich.
+Patts Library (Patts as in Patterns) is a React styled component pattern library. It has taken inspiration from Storybook, however works fairly differently using different technologies and not as feature rich.
 
 ## How to start Patting
 
